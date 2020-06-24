@@ -1,0 +1,45 @@
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+input.ng-valid{
+    border: 2px solid green;
+}
+input{
+    
+    border: 2px solid black;
+    border-radius: 20px;
+}
+input:hover{
+    transform: scale(1.1);
+}
+label{
+    font-size: 18px;
+    font-weight: bold;
+}
+form{
+    border-left:3px solid crimson ;
+}
+
+
+
+.image{
+
+    background: linear-gradient(rgb(221, 153, 153,0.3),rgb(128, 233, 128,0.4));
+}
+form{
+
+    background: linear-gradient(rgba(243, 138, 208, 0.3),rgb(128, 233, 128,0.4));
+}
+.image img{
+
+    height: 100%;
+    width:100%;
+    border-right: 3px solid crimson;
+}
+.dno{
+    visibility: hidden;
+}
+.dyes{
+    visibility: visible;
+    font-size: 20px;
+}

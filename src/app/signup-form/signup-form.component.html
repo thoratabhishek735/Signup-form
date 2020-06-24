@@ -1,0 +1,58 @@
+
+<div class="container-fluid">
+    
+    <div class="row">
+       <!-- image div -->
+       <div class="col-lg-7 image">
+          
+          <img src="../assets/images/angphoto.jpg" class="" alt="">
+       </div>
+       <!-- form starts here -->
+ <form  class=" col-lg-5 " [formGroup]="signupForm" >
+   <h1 class="text-center mb-5">SignUp Here</h1>
+     <div class="form-group col-lg-12 mx-auto mt-5">
+   <label for="">First Name(Max 30 Characters)</label><input type="text" formControlName="fname" class="form-control shadow" id="firstName" placeholder="Enter Your First name">
+   <span *ngIf="signupForm.controls['fname'].hasError('required')">*Required</span>
+   <span *ngIf="signupForm.controls['fname'].hasError('pattern')" class="text-danger font-weight-bold">Should be string only </span>
+   <span *ngIf="signupForm.controls['fname'].hasError('minlength')" class="text-danger font-weight-bold">Name must be grater than 2 Chracters</span>
+   <span *ngIf="signupForm.controls['fname'].hasError('maxlength')" class="text-danger font-weight-bold">Name must be less than 30 Chracters</span>
+</div>
+     <div class="form-group col-lg-12 mx-auto">
+   <label for="">LastName(Max 30 Characters)</label><input type="text"formControlName="lname"  class="form-control shadow" id="LastName"placeholder="Enter Your Last name">
+   <span *ngIf="signupForm.controls['lname'].hasError('required')">*Required</span>
+   <span *ngIf="signupForm.controls['lname'].hasError('pattern')" class="text-danger font-weight-bold">Should be string only </span>
+   <span *ngIf="signupForm.controls['lname'].hasError('minlength')" class="text-danger font-weight-bold">Name must be grater than 2 Chracters</span>
+   <span *ngIf="signupForm.controls['lname'].hasError('maxlength')" class="text-danger font-weight-bold">Name must be less than 30 Chracters</span>
+</div>
+     
+     <div class="form-group col-lg-12 mx-auto">
+   
+      <label for="">Username(Max 15 Characters)</label><input type="text"formControlName="uname"  class="form-control shadow" id="Username"placeholder="Enter Your Username">
+      <span *ngIf="signupForm.controls['uname'].hasError('required')">*Required</span>
+      <span *ngIf="signupForm.controls['uname'].hasError('pattern')" class="text-danger font-weight-bold">No special characters allowed </span>
+      <span *ngIf="signupForm.controls['uname'].hasError('minlength')" class="text-danger font-weight-bold">Name must be grater than 2 Chracters</span>
+      <span *ngIf="signupForm.controls['uname'].hasError('maxlength')" class="text-danger font-weight-bold">Name must be less than 15 Chracters</span>
+   </div>
+     <div class="form-group col-lg-12 mx-auto">
+   <label for="">Password(Minimum 6 characters)</label><input type="password" formControlName="pass" class="form-control shadow" id="Password"placeholder="Enter Password">
+   <span *ngIf="signupForm.controls['pass'].hasError('required')" >*Required</span>
+   <span *ngIf="signupForm.controls['pass'].hasError('minlength')" class="text-danger font-weight-bold">Password must be grater than 6 Chracters</span>
+</div>
+<div class="form-group col-lg-12 mx-auto mt-5"><label for="">Date Of Birth</label><input type="date"formControlName="dob" >
+   <span *ngIf="signupForm.controls['dob'].hasError('required')">*Required</span></div>
+<div class="form-group col-lg-12 mx-auto mb-5"><label for="">Country(Max 30 Characters)</label><input type="text" formControlName="country" class="form-control shadow" id="country" placeholder="Enter Country"><span *ngIf="signupForm.controls['country'].hasError('required')">*Required</span>
+   <span *ngIf="signupForm.controls['country'].hasError('pattern')" class="text-danger font-weight-bold">Should be string only </span>
+   
+   <span *ngIf="signupForm.controls['country'].hasError('maxlength')" class="text-danger font-weight-bold">Name must be less than 30 Chracters</span></div>
+
+
+
+     
+ <button type="submit" class="btn btn-success col-lg-8 offset-lg-2" value="Post Data" (click)="PostData()"  [disabled]="!signupForm.valid">Sign up</button>
+
+ <p class=" col-lg-10 offset-lg-1 mt-3 mb-5 font-weight-bold "[ngClass]="[signupForm.valid ? 'dno':'dyes']">Button disabled please fill form correctly to enable</p>
+ <h3 class="text-center"[ngClass]="[signupForm.valid ? 'dyes':'dno']">View your submitted form data in console</h3> 
+</form>
+ 
+</div>
+</div>
